@@ -20,19 +20,22 @@ void    sort_arr(int *arr, int size)
     while (i < size)
     {
         j = i + 1;
-        if (arr[i] > arr[j])
-        {
-            tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;   
-            i = 0;
+       
+       while(j < size)
+       {
+            if (arr[i] > arr[j])
+            {
+                tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;   
+            }
+            j++;
         }
-        // head = head->next;
         i++;
     }
 }
 
-void    sort_list(t_list **stack)
+void    index_list(t_list **stack)
 {
     t_list *head = NULL;
     // t_list *current = NULL;
@@ -52,13 +55,23 @@ void    sort_list(t_list **stack)
         head = head->next;
         i++;
     }
-
+    head = *stack;
     sort_arr(arr, size);
-        // exit(1);
+    while(head)
+    {
+        i = 0;
+        while(i < size)
+        {
+            if((int )head->content == arr[i])
+            head->index = i;
+            i++;
+        }
+        head = head->next;
+    }
    i = 0;
    while(i < size)
    {
         printf("%d\n", arr[i]);
         i++;
-   }
+    }
 }

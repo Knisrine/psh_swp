@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:23:10 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/06 13:22:28 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/06 23:08:58 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct t_list
 } t_list;
 
 void    get_small(t_list **smallest, t_list *head);
-void    sort_list(t_list **stack);
+void    index_list(t_list **stack);
 void    case_5(t_list **stack_a, t_list **stack_b);
 void    case_3(t_list **stack_a);
 t_list	*ft_lstnew(void *content);

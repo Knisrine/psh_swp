@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:21:55 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/06 12:49:56 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/06 23:17:47 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void    static make_lnkdlst(int ac, char **av, t_list **stack_a)
         while(str[j])
         {
             ft_addBack(&(*stack_a),ft_lstnew((int *)ft_atoi(str[j])));
-            // free(str[j]);
+            free(str[j]);
             j++;
         }
         free(str);
@@ -77,21 +77,17 @@ int main(int ac, char **av)
     if((int )stack_a->content > 2147483647)
         write(1, "Error\n", 6);
     size_stack = ft_lstSize(stack_a);
+    ////////case 3 ////////
     if(size_stack == 3)
-    {   
         case_3(&stack_a);
-        // return(0);
-    }
-    if(size_stack == 5)
-    {    
+    ////////case 5 ///////
+    else if(size_stack == 5)
         case_5(&stack_a,&stack_b);
-        // return(0);
-    }
     // system("leaks ./a.out");
     // exit(1);
-    ///////////__Sort__////////////
+    ///////////__Sort & indexing__////////////
+    index_list(&stack_a);
     
-    sort_list(&stack_a);
 
 //////////Show Stacks///////////////
 
@@ -100,8 +96,11 @@ int main(int ac, char **av)
     {
     printf("[%d]__", stack_a->index);
     printf("%d\n", (int )stack_a->content);
+
         stack_a = stack_a->next;
+    free(stack_a);
     }
+    // system("leaks a.out");
     exit(1);
     printf("--------stack_B--------\n");
     
