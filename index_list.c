@@ -68,10 +68,4 @@ void    index_list(t_list **stack)
         }
         head = head->next;
     }
-   i = 0;
-   while(i < size)
-   {
-        printf("%d\n", arr[i]);
-        i++;
-    }
 }

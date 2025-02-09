@@ -6,13 +6,13 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:46:49 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/05 23:48:12 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/07 22:13:29 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp.h"
 
-long int	ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
 	int	i;
 	long int	result;

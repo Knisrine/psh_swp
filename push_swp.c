@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:21:55 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/06 23:17:47 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/08 21:20:57 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,28 @@ int main(int ac, char **av)
     ////////case 5 ///////
     else if(size_stack == 5)
         case_5(&stack_a,&stack_b);
-    // system("leaks ./a.out");
-    // exit(1);
-    ///////////__Sort & indexing__////////////
+    ///////__indexn__///////////
     index_list(&stack_a);
-    
+    int start = 0;
+    int end = 15;
+    /////////algo///////
+    while(stack_a)
+    {
+        if((stack_a->index >= start) && (stack_a->index <= end))
+            pb(&stack_a, &stack_b);
+        // printf("%s\n", stack_b->content);
+        else if(stack_a->index > end)
+            r_ab(&stack_a);
+        else if(stack_a->index < start)
+        {
+            pb(&stack_a, &stack_b);
+            r_ab(&stack_a);
+        }
+            start++;
+            end++;
+            // if(start == 5)
+            // break;
+    }
 
 //////////Show Stacks///////////////
 
@@ -98,16 +115,18 @@ int main(int ac, char **av)
     printf("%d\n", (int )stack_a->content);
 
         stack_a = stack_a->next;
-    free(stack_a);
+    // free(stack_a);
     }
-    // system("leaks a.out");
-    exit(1);
     printf("--------stack_B--------\n");
     
     while(stack_b)
     {
-    printf("%s\n", stack_b->content);
+        printf("[%d]__", stack_b->index);
+        printf("%d\n", (int )stack_b->content);
         stack_b = stack_b->next;
     }
     // system("leaks a.out");
-}
+    // exit(1);
+        // exit(1);
+    // system("leaks a.out");
+    }

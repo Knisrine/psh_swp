@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:23:10 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/06 23:08:58 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/07 22:13:38 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ void	pa(t_list **list_a ,t_list **list_b);
 void	pb(t_list **list_a ,t_list **list_b);
 void	ft_putnbr(long nb);
 int		ft_lstSize(t_list *list);
-long int		ft_atoi(char *str);
+long	ft_atoi(char *str);
 
 # endif
