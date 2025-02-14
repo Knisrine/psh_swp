@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:23:10 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/07 22:13:38 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/14 13:28:16 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_data
 
 typedef struct t_list
 {
-	void			*content;
+	int				content;
 	struct t_list	*next;
 	struct t_list	*prev;
 	int index;
@@ -41,7 +41,7 @@ void    get_small(t_list **smallest, t_list *head);
 void    index_list(t_list **stack);
 void    case_5(t_list **stack_a, t_list **stack_b);
 void    case_3(t_list **stack_a);
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content);
 char	*ft_strdup(char *s1);
 int		ft_strlen(char *str);
 void	ft_addBack(t_list **lst, t_list *new);

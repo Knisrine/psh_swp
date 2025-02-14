@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:03:56 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/01/24 22:39:55 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/13 12:27:08 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void    rrr(t_list **list)
     //Done
     *list = last;
     
-    while ((*list))
-    {
-        printf("%s\n", (*list)->content);
-        (*list)  = (*list)->next;
-    }
+    // while ((*list))
+    // {
+    //     printf("%d\n", (*list)->content);
+    //     (*list)  = (*list)->next;
+    // }
     
 }
