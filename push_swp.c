@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:21:55 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/14 18:00:17 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/15 22:41:22 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void    static make_lnkdlst(int ac, char **av, t_list **stack_a)
 {
     int i;
     char **str;
-    
+
     i = 1;
     int j;
     while(i < ac)
@@ -75,6 +75,9 @@ void    static make_lnkdlst(int ac, char **av, t_list **stack_a)
     }
 }
 
+
+    
+
 int main(int ac, char **av)
 {
     t_list *stack_a;
@@ -87,58 +90,56 @@ int main(int ac, char **av)
     stack_b =  NULL;
     check_error(ac,av);
     make_lnkdlst(ac,av,&stack_a);
-    if((int )stack_a->content > 2147483647)
+    if(stack_a->content > 2147483647)
         write(1, "Error\n", 6);
     size_stack = ft_lstSize(stack_a);
-    
+
+    if(size_stack == 1)
+        return(0);
     if(size_stack == 2)
-        swp_ab(&stack_a);
+        swap(&stack_a);
     ////////case 3 ////////
+    index_list(&stack_a);
     if(size_stack == 3)
         case_3(&stack_a);
     ////////case 5 ///////
     if(size_stack == 5)
         case_5(&stack_a,&stack_b);
     ///////__indexn__///////////
-    index_list(&stack_a);
     int start = 0;
     int end = 15;
-    ///////algo///////
     while(stack_a && (start <= end))
     {
         if((stack_a->index >= start) && (stack_a->index <= end))
-            pb(&stack_a, &stack_b);
+            push_b(&stack_a, &stack_b);
         else if(stack_a->index > end)
-            r_ab(&stack_a);
+            rotate(&stack_a);
         else if(stack_a->index < start)
         {
-            pb(&stack_a, &stack_b);
-            r_ab(&stack_b);
+            push_b(&stack_a, &stack_b);
+            rotate(&stack_b);
         }
             start++;
             end++;
     }
-    // exit(1);
-
+    Sort(&stack_a, &stack_b);
+        
 //////////Show Stacks///////////////
 
     printf("--------stack_A--------\n");
-    while(stack_a)
-    {
-
-       stack_a = stack_a->next;
+        while(stack_a)
+        {
+            printf("[%d] ",stack_a->index);
+            printf("%d\n",stack_a->content);
+            stack_a = stack_a->next;
+        // free(stack_a);
+        }
     
-    free(stack_a);
-    }
-        // exit(1);
     printf("--------stack_B--------\n");
-    
-    while(stack_b)
-    {
-        stack_b = stack_b->next;
-    }
-    // system("leaks push_swp");
-    // exit(1);
-        // exit(1);
-    // system("leaks a.out");
+        while(stack_b)
+        {
+            printf("[%d] ",stack_b->index);
+            printf("%d\n",stack_b->content);
+            stack_b = stack_b->next;
+        }
     }

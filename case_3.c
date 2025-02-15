@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 14:08:17 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/07 22:58:19 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/15 22:35:51 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,23 @@ void    case_3(t_list **stack_a)
 	midlle = (*stack_a)->next;
 	while(last->next)
 	last = last->next;
-	a = (int) (*stack_a)->content;
-	b = (int) midlle->content;
-	c = (int) last->content;
+	a =(*stack_a)->content;
+	b = midlle->content;
+	c = last->content;
 	if(a > b && a < c)
-		swp_ab(&(*stack_a));
+		swap(&(*stack_a));
 	else if(a > b && b > c)
 	{
-		swp_ab(&(*stack_a));
-		rr_ab(&(*stack_a));
+		swap(&(*stack_a));
+		rev_rotate(&(*stack_a));
 	}
 	else if(a > b && a > c)
-		r_ab(&(*stack_a));
+		rotate(&(*stack_a));
 	else if(a < b && a > c)
-		rr_ab(&(*stack_a));
+		rev_rotate(&(*stack_a));
 	else if(b > a && b > c)
 	{
-		swp_ab(&(*stack_a));
-		r_ab(&(*stack_a));
+		swap(&(*stack_a));
+		rotate(&(*stack_a));
 	}
 }

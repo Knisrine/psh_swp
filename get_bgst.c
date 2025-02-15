@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_smll.c                                         :+:      :+:    :+:   */
+/*   get_bgst.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 17:01:57 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/15 13:44:49 by nikhtib          ###   ########.fr       */
+/*   Created: 2025/02/15 13:06:22 by nikhtib           #+#    #+#             */
+/*   Updated: 2025/02/15 19:08:47 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp.h"
 
-void    get_small(t_list **smallest, t_list *head)
+int    get_bgst(t_list **biggest, t_list *head)
 {
+    int i;
+
+    i = 0;
     while (head)
-    {
-        if ((*smallest)->content > (head->content))
-            *smallest = head;
+    {   
+        i++;
+        if ((*biggest)->index < head->index)
+            {
+                *biggest = head;
+                i++;
+            }
         head = head->next;
     }
+    return (i);
 }

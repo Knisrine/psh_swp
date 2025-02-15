@@ -6,13 +6,13 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:52:33 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/06 13:55:29 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/15 15:17:55 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp.h"
 
-void    sort_arr(int **arr)
+void    sort_arr(int **arr, int size)
 {
     int i = 0;
     int j;

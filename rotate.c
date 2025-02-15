@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   r_ab.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:48:29 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/14 13:53:31 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/15 22:30:57 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp.h"
 
-void    r_ab(t_list **list)
+void    rotate(t_list **list)
 {
     
     t_list *first = NULL;
     t_list *last = NULL;
     t_list  *save = NULL;
+    if (!(*list)->next)
+        return ;
     first = *list;
     last = *list;
     save = first;
