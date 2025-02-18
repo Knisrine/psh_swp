@@ -1,23 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sort.c                                             :+:      :+:    :+:   */
+/*   sort_100.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 20:21:33 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/15 22:38:16 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/17 16:26:11 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp.h"
 
-void Sort(t_list **stack_a, t_list **stack_b)
+static void sort_100_part1(t_list **stack_a, t_list **stack_b)
+{
+    int start = 0;
+    int end = 15;
+    
+    while(*stack_a)
+    {
+        if(((*stack_a)->index >= start) && ((*stack_a)->index < end))
+        {
+            push_b(stack_a, stack_b);
+            start++;
+            end++;
+        }   
+        else if((*stack_a)->index < start)
+        {
+            push_b(stack_a, stack_b);
+            rb(&(*stack_b));
+            start++;
+            end++;
+        }
+        else
+                ra(stack_a);
+    }
+}
+void sort_100(t_list **stack_a, t_list **stack_b)
 {
     t_list *biggest;
     int position;
-    // get_bgst(&biggest,*stack_b);
-    int i = 0;
+
+    sort_100_part1(stack_a, stack_b);
     while(*stack_b)
     {
         biggest = *stack_b;
@@ -25,19 +49,17 @@ void Sort(t_list **stack_a, t_list **stack_b)
         position = get_position(*stack_b,biggest);
         if(position < (ft_lstSize(*stack_b) / 2))
         {
-                if(biggest->index == (*stack_b)->index)
-                    push_a(&(*stack_a),&(*stack_b));
-                else
-                    rotate(&(*stack_b));
+            if(biggest->index == (*stack_b)->index)
+                push_a(stack_a,stack_b);
+            else
+                rb(stack_b);
         }
         else
         {
             if(biggest->index == (*stack_b)->index)
-                    push_a(&(*stack_a),&(*stack_b)); 
+                push_a(stack_a,stack_b);
             else
-                rev_rotate(&(*stack_b));
-       
+                rrb(stack_b);
         }
-        i++;
     }
 }

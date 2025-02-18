@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:01:57 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/15 13:44:49 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/18 02:45:47 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void    get_small(t_list **smallest, t_list *head)
 {
-    while (head)
+    if(head == NULL)
+            return;
+    while (head->next)
     {
         if ((*smallest)->content > (head->content))
             *smallest = head;

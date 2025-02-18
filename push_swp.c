@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:21:55 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/15 22:41:22 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/17 22:12:12 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,13 @@ void    static make_lnkdlst(int ac, char **av, t_list **stack_a)
         str = ft_split(av[i],' ');
         j = 0;
         while(str[j])
-        {
+        {     
+            if(ft_atoi(str[j])  > 2147483647 || ft_atoi(str[j])  < -2147483648 || (ft_strlen(str[j]) == 1 && ft_issign(*str[j])))
+            {
+                write(1, "Error\n", 6);
+                free(str[j]);
+                exit(1);
+            }
             ft_addBack(&(*stack_a),ft_lstnew(ft_atoi(str[j])));
             free(str[j]);
             j++;
@@ -75,8 +81,6 @@ void    static make_lnkdlst(int ac, char **av, t_list **stack_a)
     }
 }
 
-
-    
 
 int main(int ac, char **av)
 {
@@ -90,56 +94,20 @@ int main(int ac, char **av)
     stack_b =  NULL;
     check_error(ac,av);
     make_lnkdlst(ac,av,&stack_a);
-    if(stack_a->content > 2147483647)
-        write(1, "Error\n", 6);
     size_stack = ft_lstSize(stack_a);
-
+    index_list(&stack_a);
     if(size_stack == 1)
         return(0);
-    if(size_stack == 2)
-        swap(&stack_a);
-    ////////case 3 ////////
-    index_list(&stack_a);
-    if(size_stack == 3)
+    if (check_sort(&stack_a))
+        exit(1);
+    else if(size_stack == 2)
+        sa(&stack_a);
+    else if(size_stack == 3)
         case_3(&stack_a);
-    ////////case 5 ///////
-    if(size_stack == 5)
+    else if(size_stack <= 5)
         case_5(&stack_a,&stack_b);
-    ///////__indexn__///////////
-    int start = 0;
-    int end = 15;
-    while(stack_a && (start <= end))
-    {
-        if((stack_a->index >= start) && (stack_a->index <= end))
-            push_b(&stack_a, &stack_b);
-        else if(stack_a->index > end)
-            rotate(&stack_a);
-        else if(stack_a->index < start)
-        {
-            push_b(&stack_a, &stack_b);
-            rotate(&stack_b);
-        }
-            start++;
-            end++;
-    }
-    Sort(&stack_a, &stack_b);
-        
-//////////Show Stacks///////////////
-
-    printf("--------stack_A--------\n");
-        while(stack_a)
-        {
-            printf("[%d] ",stack_a->index);
-            printf("%d\n",stack_a->content);
-            stack_a = stack_a->next;
-        // free(stack_a);
-        }
-    
-    printf("--------stack_B--------\n");
-        while(stack_b)
-        {
-            printf("[%d] ",stack_b->index);
-            printf("%d\n",stack_b->content);
-            stack_b = stack_b->next;
-        }
+    else if(size_stack <= 100)
+        sort_100(&stack_a, &stack_b);
+    else if(size_stack <= 500)
+        sort_500(&stack_a, &stack_b);
     }

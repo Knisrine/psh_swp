@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:48:29 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/15 22:30:57 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/17 14:34:27 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void    rotate(t_list **list)
     first = *list;
     last = *list;
     save = first;
-    // printf("%d", (*list)->content);
-    // exit(1);
     //move to the last node
     while (last->next)
         last = last->next;
@@ -33,4 +31,16 @@ void    rotate(t_list **list)
     last->next = save;
     save->next = NULL;
 
+}
+
+void    ra(t_list **lst)
+{
+    rotate(lst);
+    write(1, "ra\n", 3);
+}
+
+void    rb(t_list **lst)
+{
+    rotate(lst);
+    write(1, "rb\n", 3);
 }
