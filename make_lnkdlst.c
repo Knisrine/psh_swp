@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   make_lnkdlst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 21:26:14 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/19 17:36:05 by nikhtib          ###   ########.fr       */
+/*   Created: 2025/02/19 16:57:03 by nikhtib           #+#    #+#             */
+/*   Updated: 2025/02/19 23:13:47 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp.h"
 
-char	*ft_strdup(char *s1)
+void	make_lnkdlst(int ac, char **av, t_list **stack_a)
 {
-	char	*ptr;
-	int		len;
+	char	**str;
 	int		i;
+	int		j;
 
-	len = ft_strlen((char *)s1);
-	ptr = malloc(len * sizeof(char) + 1);
-	if (!ptr)
-		return (NULL);
-	i = 0;
-	while (s1[i] && i < len)
+	i = 1;
+	while (i < ac)
 	{
-		ptr[i] = s1[i];
+		str = ft_split(av[i], ' ');
+		j = 0;
+		while (str[j])
+		{
+			if (ft_atoi(str[j]) > 2147483647 || ft_atoi(str[j]) < -2147483648
+				|| (ft_strlen(str[j]) == 1 && ft_issign(*str[j])))
+			{
+				write(1, "Error\n", 6);
+				free(str[j]);
+				exit(1);
+			}
+			ft_addback(stack_a, ft_lstnew(ft_atoi(str[j])));
+			free(str[j]);
+			j++;
+		}
+		free(str);
 		i++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
 }

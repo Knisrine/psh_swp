@@ -12,26 +12,28 @@
 
 #include "psh_swp.h"
 
-void swap(t_list **list)
+void	swap(t_list **list)
 {
-    t_list *frst = NULL;
-    t_list *scnd = NULL;
-    
-    frst = *list;
-    scnd = frst->next;
-    frst->next = scnd->next;
-    scnd->next = frst;
-    *list = scnd;
+	t_list	*frst;
+	t_list	*scnd;
+
+	frst = NULL;
+	scnd = NULL;
+	frst = *list;
+	scnd = frst->next;
+	frst->next = scnd->next;
+	scnd->next = frst;
+	*list = scnd;
 }
 
-void    sa(t_list **lst)
+void	sa(t_list **lst)
 {
-    swap(lst);
-    write(1, "sa\n", 3);
+	swap(lst);
+	write(1, "sa\n", 3);
 }
 
-void    sb(t_list **lst)
+void	sb(t_list **lst)
 {
-    swap(lst);
-    write(1, "sb\n", 3);
+	swap(lst);
+	write(1, "sb\n", 3);
 }

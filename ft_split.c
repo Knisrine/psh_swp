@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 00:57:55 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/03 21:54:59 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/19 17:35:11 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static int	split_string(t_data *data, const char *s, char c)
 	return (1);
 }
 
-char	**ft_split(char  *s, char c)
+char	**ft_split(char *s, char c)
 {
 	t_data	data;
 

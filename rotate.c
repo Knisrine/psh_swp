@@ -12,35 +12,37 @@
 
 #include "psh_swp.h"
 
-void    rotate(t_list **list)
+void	rotate(t_list **list)
 {
-    
-    t_list *first = NULL;
-    t_list *last = NULL;
-    t_list  *save = NULL;
-    if (!(*list)->next)
-        return ;
-    first = *list;
-    last = *list;
-    save = first;
-    //move to the last node
-    while (last->next)
-        last = last->next;
-    //then move the first to th last
-    *list = first->next;
-    last->next = save;
-    save->next = NULL;
+	t_list	*first;
+	t_list	*last;
+	t_list	*save;
 
+	first = NULL;
+	last = NULL;
+	save = NULL;
+	if (!(*list)->next)
+		return ;
+	first = *list;
+	last = *list;
+	save = first;
+	// move to the last node
+	while (last->next)
+		last = last->next;
+	// then move the first to th last
+	*list = first->next;
+	last->next = save;
+	save->next = NULL;
 }
 
-void    ra(t_list **lst)
+void	ra(t_list **lst)
 {
-    rotate(lst);
-    write(1, "ra\n", 3);
+	rotate(lst);
+	write(1, "ra\n", 3);
 }
 
-void    rb(t_list **lst)
+void	rb(t_list **lst)
 {
-    rotate(lst);
-    write(1, "rb\n", 3);
+	rotate(lst);
+	write(1, "rb\n", 3);
 }

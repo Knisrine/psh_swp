@@ -19,11 +19,11 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(long nb)
 {
-    if(nb > 2147483647)
-    {
-        write(1 ,"ERROR", 5);
-        return;
-    }
+	if (nb > 2147483647)
+	{
+		write(1, "ERROR", 5);
+		return ;
+	}
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);

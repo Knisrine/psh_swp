@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:46:49 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/07 22:13:29 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/19 17:13:59 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 long	ft_atoi(char *str)
 {
-	int	i;
-	long int	result;
-	int	sign;
+	long	result;
+	int		i;
+	int		sign;
 
 	result = 0;
 	sign = 1;
@@ -31,8 +31,8 @@ long	ft_atoi(char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		 result = result * 10 + (str[i] - 48);
+		result = result * 10 + (str[i] - 48);
 		i++;
 	}
 	return (result * sign);
-} 
+}
