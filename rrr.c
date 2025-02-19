@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 23:03:56 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/18 02:48:55 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/19 01:18:22 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void    rrr(t_list **list)
     last->next = frst->next;
     last->prev = NULL;
     //switch first to last
-     exit(1);
     n_last->next = frst;
     frst->prev = n_last;
     frst->next = NULL; 

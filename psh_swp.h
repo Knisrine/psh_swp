@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:23:10 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/17 16:23:55 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/19 01:31:05 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct t_list
 
 t_list	*ft_lstnew(int content);
 void    get_small(t_list **smallest, t_list *head);
-int		get_bgst(t_list **biggest, t_list *head);
+void		get_bgst(t_list **biggest, t_list *head);
 int     get_position(t_list *stack, t_list *bggst);
 int		ft_lstSize(t_list *list);
 int		ft_strlen(char *str);
@@ -57,7 +57,6 @@ void	ft_addFront(t_list **lst, t_list *new);
 void	swap(t_list **list);
 void    sa(t_list **lst);
 void    sb(t_list **lst);
-void    rrr(t_list **list);
 void	rotate(t_list **list);
 void    ra(t_list **lst);
 void    rb(t_list **lst);

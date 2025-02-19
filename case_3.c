@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 14:08:17 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/17 01:57:26 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/19 01:22:44 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,19 @@
 void	case_3(t_list **stack)
 {
 	t_list *biggst;
-	
+	if(!(*stack))
+		return;
 	biggst = *stack;
 	get_bgst(&biggst, *stack);
 	if((*stack)->index == biggst->index)
-		rrr(stack);
+		ra(stack);
 	if((*stack)->next->index == biggst->index)
 	{
 		sa(stack);
 		ra(stack);
 	}
+
 	if((*stack)->index > (*stack)->next->index)
 		sa(stack);
+	
 }
