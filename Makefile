@@ -1,12 +1,13 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 NAME = push_swap
-CFILES = ft_addBack.c ft_lstnew.c ft_split.c push_swp.c rotate.c rev_rotate.c \
+MFILES = ft_addBack.c ft_lstnew.c ft_split.c push_swp.c rotate.c rev_rotate.c \
 		 ft_strdup.c ft_strlen.c ft_addFront.c push_a.c push_b.c ft_lstSize.c \
 		 swap.c ft_atoi.c sort_5.c sort_3.c ft_putnbr.c get_smll.c index_list.c \
 		 get_bgst.c sort_100.c get_position.c sort_500.c check_sort.c check_error.c \
 		 ft_issign.c ft_isdigit.c ft_isspace.c make_lnkdlst.c
-OFILES = $(CFILES:.c=.o)
+OFILES = $(MFILES:.c=.o)
+OBFILES = $(BFILES:.c=.o)
 
 
 all: $(NAME)

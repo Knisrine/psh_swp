@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:23:10 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/19 17:48:29 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/20 20:35:41 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_data
 typedef struct t_list
 {
 	int				content;
-	int index;
+	int				index;
 	struct t_list	*next;
 	struct t_list	*prev;
 } t_list;

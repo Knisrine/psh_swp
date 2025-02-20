@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:46:49 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/19 17:13:59 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/20 21:36:58 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ long	ft_atoi(char *str)
 	long	result;
 	int		i;
 	int		sign;
+
+	if(!str)
+		return (0);
 
 	result = 0;
 	sign = 1;
