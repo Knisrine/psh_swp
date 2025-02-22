@@ -22,11 +22,12 @@ void	sort_3(t_list **stack)
 	get_bgst(&biggst, *stack);
 	if ((*stack)->index == biggst->index)
 		ra(stack);
-	else if((*stack)->next->index == biggst->index)
+	else if ((*stack)->next->index == biggst->index)
 	{
 		sa(stack);
 		ra(stack);
 	}
 	if ((*stack)->index > (*stack)->next->index)
 		sa(stack);
+	ft_lstclear(stack);
 }

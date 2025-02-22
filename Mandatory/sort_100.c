@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 20:21:33 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/21 22:40:35 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/22 01:16:36 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ void	sort_100(t_list **stack_a, t_list **stack_b)
 				rrb(stack_b);
 		}
 	}
+	ft_lstclear(stack_a);
 }

@@ -44,4 +44,4 @@ void	make_lnkdlst(int ac, char **av, t_list **stack_a)
 		free(str);
 		i++;
 	}
-}	
+}

@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:23:10 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/21 22:44:35 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/22 01:49:25 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,5 @@ void	rrb(t_list **lst);
 void	rra(t_list **lst);
 void	push_a(t_list **list_a, t_list **list_b);
 void	push_b(t_list **list_a, t_list **list_b);
+void	ft_lstclear(t_list **stack);
 #endif
