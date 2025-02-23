@@ -6,13 +6,13 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:21:55 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/22 19:55:33 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/23 17:05:30 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp.h"
 
-void	check_duplicate(t_list *stack)
+static void	check_duplicate(t_list *stack)
 {
 	t_list	*head;
 
@@ -32,7 +32,6 @@ void	check_duplicate(t_list *stack)
 		stack = (stack)->next;
 	}
 }
-
 
 int	main(int ac, char **av)
 {

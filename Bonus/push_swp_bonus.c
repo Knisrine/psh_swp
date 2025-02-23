@@ -6,13 +6,13 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 23:10:09 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/22 16:27:51 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/23 17:09:14 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp_bonus.h"
 
-void	check_duplicate(t_list *stack)
+static void	check_duplicate(t_list *stack)
 {
 	t_list	*head;
 
@@ -33,7 +33,7 @@ void	check_duplicate(t_list *stack)
 	}
 }
 
-int	ft_strcmp(char *s1, char *s2)
+static int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
@@ -47,7 +47,7 @@ int	ft_strcmp(char *s1, char *s2)
 	return (1);
 }
 
-void	checker(t_list **stack_a, t_list **stack_b, char *s)
+static void	checker(t_list **stack_a, t_list **stack_b, char *s)
 {
 	while (s)
 	{

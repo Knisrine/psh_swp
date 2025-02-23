@@ -6,13 +6,13 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:04:25 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/21 19:13:49 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/23 17:07:30 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp_bonus.h"
 
-void	sort_arr(int *arr, int size)
+static void	sort_arr(int *arr, int size)
 {
 	int	j;
 	int	i;
@@ -37,7 +37,7 @@ void	sort_arr(int *arr, int size)
 	}
 }
 
-void	part(t_list *head, int *arr, int size)
+static void	part(t_list *head, int *arr, int size)
 {
 	int	i;
 
