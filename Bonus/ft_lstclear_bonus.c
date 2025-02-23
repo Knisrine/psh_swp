@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_sort.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/17 00:05:38 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/22 16:07:15 by nikhtib          ###   ########.fr       */
+/*   Created: 2025/02/22 01:07:14 by nikhtib           #+#    #+#             */
+/*   Updated: 2025/02/22 14:45:02 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "psh_swp.h"
+#include "psh_swp_bonus.h"
 
-int	check_sort(t_list **lst)
+void	ft_lstclear(t_list **stack)
 {
 	t_list	*head;
 
-	if (!lst)
-		exit(1);
-	head = *lst;
-	while (head->next)
+	head = NULL;
+	while (*stack)
 	{
-		if (head->index > head->next->index)
-			return (0);
-		head = head->next;
+		head = (*stack)->next;
+		free(*stack);
+		*stack = head;
 	}
-	ft_lstclear(lst);
-	return (1);
+	*stack = NULL;
 }

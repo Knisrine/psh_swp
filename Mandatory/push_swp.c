@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:21:55 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/22 00:24:46 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/23 12:44:28 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ void	check_duplicate(t_list *stack)
 {
 	t_list	*head;
 
-	head = (stack)->next;
 	while (stack)
 	{
+		head = (stack)->next;
 		while (head)
 		{
 			if ((stack)->content == head->content)
 			{
 				write(1, "Error\n", 6);
-				free(stack);
+				ft_lstclear(&stack);
 				exit(1);
 			}
 			head = head->next;
@@ -33,18 +33,12 @@ void	check_duplicate(t_list *stack)
 	}
 }
 
-void ff()
-{
-	system("leaks push_swap");
-}
-
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 	int		size_stack;
 
-	atexit(ff);
 	if (ac == 1)
 		return (0);
 	stack_a = NULL;
