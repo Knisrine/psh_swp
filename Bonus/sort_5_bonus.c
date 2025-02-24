@@ -23,10 +23,13 @@ void	sort_5(t_list **stack_a, t_list **stack_b)
 		get_small(&smallest, *stack_a);
 		if (smallest->content == (*stack_a)->content)
 			push_b(stack_a, stack_b);
-		else
+		else if (get_position(*stack_a, smallest) <= ft_lstsize(*stack_a) / 2)
 			ra(stack_a);
+		else if (get_position(*stack_a, smallest) > ft_lstsize(*stack_a) / 2)
+			rra(stack_a);
 	}
 	sort_3(stack_a);
 	while (*stack_b)
 		push_a(stack_a, stack_b);
+	ft_lstclear(stack_a);
 }

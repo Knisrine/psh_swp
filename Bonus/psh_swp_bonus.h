@@ -6,21 +6,15 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:23:10 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/22 01:49:25 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/23 23:36:35 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PSH_SWP_BONUS_H
 # define PSH_SWP_BONUS_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
-# endif
-
-# include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include "gnl/get_next_line.h"
 
 typedef struct s_data

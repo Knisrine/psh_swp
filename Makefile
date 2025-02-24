@@ -23,7 +23,7 @@ $(NAME): $(OFILES)
 bonus: $(OBFILES)
 	$(CC) $(CFLAGS) $(OBFILES) -o $(NAMEB)
 
-%.o: %.c psh_swp.h
+%.o: %.c ./Mandatory/psh_swp.h ./Bonus/psh_swp_bonus.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

@@ -6,13 +6,13 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:46:36 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/23 12:52:17 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/23 17:06:20 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp_bonus.h"
 
-int	only_space(char *s)
+static int	only_space(char *s)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	only_space(char *s)
 	return (1);
 }
 
-void	part2(int flag, char **argmnt, int i, int j)
+static void	part2(int flag, char **argmnt, int i, int j)
 {
 	while (argmnt[i][j])
 	{

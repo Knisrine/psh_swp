@@ -6,13 +6,13 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:57:03 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/22 00:24:04 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/23 17:05:17 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "psh_swp.h"
 
-void	check_limit_int(char *str)
+static void	check_limit_int(char *str)
 {
 	if (ft_atoi(str) > 2147483647 || ft_atoi(str) < -2147483648
 		|| (ft_strlen(str) == 1 && ft_issign(*str)))

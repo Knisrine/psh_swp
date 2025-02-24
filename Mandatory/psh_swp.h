@@ -6,20 +6,14 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:23:10 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/22 01:11:00 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/23 23:38:09 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PSH_SWP_H
 # define PSH_SWP_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
-# endif
-
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_data
