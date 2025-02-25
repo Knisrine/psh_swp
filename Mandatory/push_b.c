@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:20:44 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/19 18:23:55 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/25 11:52:23 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	push_b(t_list **list_a, t_list **list_b)
 	*list_a = save->next;
 	save->next = NULL;
 	ft_addfront(list_b, save);
-	write(1, "pb\n", 3);
+	write(2, "pb\n", 3);
 }

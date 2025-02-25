@@ -23,10 +23,7 @@ void	sort_3(t_list **stack)
 	if ((*stack)->index == biggst->index)
 		ra(stack);
 	else if ((*stack)->next->index == biggst->index)
-	{
-		sa(stack);
-		ra(stack);
-	}
+		rra(stack);
 	if ((*stack)->index > (*stack)->next->index)
 		sa(stack);
 	ft_lstclear(stack);

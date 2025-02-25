@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 23:10:09 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/23 17:09:14 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/25 15:17:37 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	check_duplicate(t_list *stack)
 		{
 			if ((stack)->content == head->content)
 			{
-				write(1, "Error\n", 6);
+				write(2, "Error\n", 6);
 				ft_lstclear(&stack);
 				exit(1);
 			}
@@ -47,6 +47,25 @@ static int	ft_strcmp(char *s1, char *s2)
 	return (1);
 }
 
+static	void	p2(char *s, t_list **stack_a, t_list **stack_b)
+{
+	if (ft_strcmp(s, "rra\n"))
+		rra(stack_a);
+	else if (ft_strcmp(s, "rrb\n"))
+		rrb(stack_b);
+	else if (ft_strcmp(s, "rrr\n"))
+		rrr(stack_a, stack_b);
+	else if (ft_strcmp(s, "pa\n"))
+		push_a(stack_a, stack_b);
+	else if (ft_strcmp(s, "pb\n"))
+		push_b(stack_a, stack_b);
+	else
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
+}
+
 static void	checker(t_list **stack_a, t_list **stack_b, char *s)
 {
 	while (s)
@@ -54,24 +73,17 @@ static void	checker(t_list **stack_a, t_list **stack_b, char *s)
 		if (ft_strcmp(s, "sa\n"))
 			sa(stack_a);
 		else if (ft_strcmp(s, "sb\n"))
-			sb(stack_a);
+			sb(stack_b);
+		else if (ft_strcmp(s, "ss\n"))
+			ss(stack_a, stack_b);
 		else if (ft_strcmp(s, "ra\n"))
 			ra(stack_a);
 		else if (ft_strcmp(s, "rb\n"))
-			rb(stack_a);
-		else if (ft_strcmp(s, "rra\n"))
-			rra(stack_a);
-		else if (ft_strcmp(s, "rrb\n"))
-			rrb(stack_a);
-		else if (ft_strcmp(s, "pa\n"))
-			push_a(stack_a, stack_b);
-		else if (ft_strcmp(s, "pb\n"))
-			push_b(stack_a, stack_b);
+			rb(stack_b);
+		else if (ft_strcmp(s, "rr\n"))
+			rr(stack_a, stack_b);
 		else
-		{
-			write(1, "Error\n", 6);
-			exit(1);
-		}
+			p2(s, stack_a, stack_b);
 		s = get_next_line(0);
 	}
 }
@@ -96,10 +108,10 @@ int	main(int ac, char **av)
 		return (0);
 	s = get_next_line(0);
 	checker(&stack_a, &stack_b, s);
-	if (check_sort(&stack_a) && (ft_lstsize(stack_b) == 0))
-		write(1, "OK\n", 3);
+	if ((check_sort (&stack_a, &stack_b)) && (ft_lstsize (stack_b) == 0))
+		write(2, "OK\n", 3);
 	else
-		write(1, "KO\n", 3);
+		write(2, "KO\n", 3);
 	free(s);
 	ft_lstclear(&stack_a);
 }

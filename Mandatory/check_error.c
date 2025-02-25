@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:46:36 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/23 17:33:10 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/25 11:51:56 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	part2(int flag, char **argmnt, int i, int j)
 			if (flag > 1 || (!ft_isdigit(argmnt[i][j])
 				&& (!ft_issign(argmnt[i][j]) || !ft_isspace(argmnt[i][j - 1]))))
 			{
-				write(1, "Error\n", 6);
+				write(2, "Error\n", 6);
 				exit(1);
 			}
 		}
@@ -56,7 +56,7 @@ void	check_error(int ac, char **argmnt, int i)
 		flag = 0;
 		if (only_space(argmnt[i]))
 		{
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 			exit(1);
 		}
 		while (ft_issign(argmnt[i][j]))

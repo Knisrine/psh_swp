@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:08:07 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/21 22:45:16 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/25 14:17:03 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	rev_rotate(t_list **list)
 	t_list	*last;
 	t_list	*save;
 
+	if (!(*list) || !list)
+		return ;
 	first = NULL;
 	last = NULL;
 	save = NULL;
-	if (*list == NULL)
-		return ;
 	first = *list;
 	last = first;
 	while (first->next)
@@ -48,4 +48,10 @@ void	rra(t_list **lst)
 void	rrb(t_list **lst)
 {
 	rev_rotate(lst);
+}
+
+void	rrr(t_list **lst1, t_list **lst2)
+{
+	rra(lst1);
+	rrb(lst2);
 }

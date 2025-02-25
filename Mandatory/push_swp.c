@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:21:55 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/23 17:05:30 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/25 11:52:28 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	check_duplicate(t_list *stack)
 		{
 			if ((stack)->content == head->content)
 			{
-				write(1, "Error\n", 6);
+				write(2, "Error\n", 6);
 				ft_lstclear(&stack);
 				exit(1);
 			}
@@ -50,7 +50,7 @@ int	main(int ac, char **av)
 	index_list(&stack_a);
 	if (size_stack == 1)
 		return (0);
-	if (check_sort(&stack_a))
+	if (check_sort(&stack_a, &stack_b))
 		exit(1);
 	else if (size_stack <= 3)
 		sort_3(&stack_a);

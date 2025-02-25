@@ -6,20 +6,14 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 21:23:10 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/22 01:11:00 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/25 11:58:10 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PSH_SWP_H
 # define PSH_SWP_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
-# endif
-
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_data
@@ -48,11 +42,10 @@ int					ft_strlen(char *str);
 int					ft_issign(char c);
 int					ft_isspace(char c);
 int					ft_isdigit(char c);
-int					check_sort(t_list **lst);
+int					check_sort(t_list **stack_a, t_list **stack_b);
 char				**ft_split(char *s, char c);
 char				*ft_strdup(char *s1);
 long				ft_atoi(char *str);
-void				ft_putnbr(long nb);
 void				get_small(t_list **smallest, t_list *head);
 void				get_bgst(t_list **biggest, t_list *head);
 int					get_position(t_list *stack, t_list *bggst);

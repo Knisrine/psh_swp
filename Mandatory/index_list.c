@@ -65,7 +65,7 @@ void	index_list(t_list **stack)
 	size = ft_lstsize(*stack);
 	if (!stack || !*stack)
 		return ;
-	arr = malloc(sizeof (int) * size);
+	arr = malloc(sizeof(int) * size);
 	if (!arr)
 		exit(1);
 	head = *stack;
