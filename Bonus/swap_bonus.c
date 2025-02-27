@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:05:51 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/24 23:11:28 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:18:03 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ void	swap(t_list **list)
 	t_list	*frst;
 	t_list	*scnd;
 
+	if(!(*list) || !list)
+		return;
+	if(ft_lstsize(*list) < 2)
+		return;
 	frst = NULL;
 	scnd = NULL;
 	frst = *list;

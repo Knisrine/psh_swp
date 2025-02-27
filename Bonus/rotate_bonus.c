@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:48:29 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/25 15:26:51 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:06:09 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	rotate(t_list **list)
 	t_list	*last;
 	t_list	*save;
 
-	if (!(*list))
+	if (!(*list) || !list)
 		return ;
 	first = NULL;
 	last = NULL;
