@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 18:08:07 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/25 14:12:30 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/28 17:27:13 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void	rev_rotate(t_list **list)
 void	rra(t_list **lst)
 {
 	rev_rotate(lst);
-	write(2, "rra\n", 4);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_list **lst)
 {
 	rev_rotate(lst);
-	write(2, "rrb\n", 4);
+	write(1, "rrb\n", 4);
 }

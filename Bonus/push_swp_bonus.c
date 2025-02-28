@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 23:10:09 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/25 15:17:37 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/28 18:30:42 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ static	void	p2(char *s, t_list **stack_a, t_list **stack_b)
 	else
 	{
 		write(2, "Error\n", 6);
+		free(s);
+		ft_lstclear(stack_a);
+		ft_lstclear(stack_b);
 		exit(1);
 	}
 }
@@ -108,10 +111,11 @@ int	main(int ac, char **av)
 		return (0);
 	s = get_next_line(0);
 	checker(&stack_a, &stack_b, s);
-	if ((check_sort (&stack_a, &stack_b)) && (ft_lstsize (stack_b) == 0))
-		write(2, "OK\n", 3);
+	if ((check_sort (&stack_a)) && (ft_lstsize (stack_b) == 0))
+		write(1, "OK\n", 3);
 	else
-		write(2, "KO\n", 3);
+		write(1, "KO\n", 3);
 	free(s);
 	ft_lstclear(&stack_a);
+	ft_lstclear(&stack_b);
 }

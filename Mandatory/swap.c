@@ -6,7 +6,7 @@
 /*   By: nikhtib <nikhtib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 16:05:51 by nikhtib           #+#    #+#             */
-/*   Updated: 2025/02/25 21:17:38 by nikhtib          ###   ########.fr       */
+/*   Updated: 2025/02/28 17:27:25 by nikhtib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ void	swap(t_list **list)
 void	sa(t_list **lst)
 {
 	swap(lst);
-	write(2, "sa\n", 3);
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_list **lst)
 {
 	swap(lst);
-	write(2, "sb\n", 3);
+	write(1, "sb\n", 3);
 }

@@ -9,8 +9,8 @@ MFILES = ./Mandatory/ft_addBack.c ./Mandatory/ft_lstnew.c ./Mandatory/ft_split.c
 		 ./Mandatory/ft_issign.c ./Mandatory/ft_isdigit.c ./Mandatory/ft_isspace.c ./Mandatory/make_lnkdlst.c ./Mandatory/ft_lstclear.c
 BFILES =  ./Bonus/ft_addBack_bonus.c ./Bonus/ft_lstnew_bonus.c ./Bonus/ft_split_bonus.c ./Bonus/push_swp_bonus.c ./Bonus/rotate_bonus.c ./Bonus/rev_rotate_bonus.c \
 		  ./Bonus/ft_addFront_bonus.c ./Bonus/push_a_bonus.c ./Bonus/push_b_bonus.c ./Bonus/ft_lstSize_bonus.c \
-		 ./Bonus/swap_bonus.c ./Bonus/ft_atoi_bonus.c ./Bonus/sort_5_bonus.c ./Bonus/sort_3_bonus.c ./Bonus/get_smll_bonus.c ./Bonus/index_list_bonus.c \
-		 ./Bonus/get_bgst_bonus.c ./Bonus/sort_100_bonus.c ./Bonus/get_position_bonus.c ./Bonus/sort_500_bonus.c ./Bonus/check_sort_bonus.c ./Bonus/check_error_bonus.c ./Bonus/ft_lstclear_bonus.c\
+		 ./Bonus/swap_bonus.c ./Bonus/ft_atoi_bonus.c ./Bonus/get_smll_bonus.c ./Bonus/index_list_bonus.c \
+		 ./Bonus/get_bgst_bonus.c ./Bonus/get_position_bonus.c ./Bonus/check_sort_bonus.c ./Bonus/check_error_bonus.c ./Bonus/ft_lstclear_bonus.c\
 		 ./Bonus/ft_issign_bonus.c ./Bonus/ft_isdigit_bonus.c ./Bonus/ft_isspace_bonus.c ./Bonus/make_lnkdlst_bonus.c ./Bonus/gnl/get_next_line.c ./Bonus/gnl/get_next_line_utils.c
 OFILES = $(MFILES:.c=.o)
 OBFILES = $(BFILES:.c=.o)
